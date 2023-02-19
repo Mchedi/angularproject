@@ -10,6 +10,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { Ateleir3Component } from './atelier3/ateleir3.component';
  
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     ArticlesComponent,
     NotfoundComponent,
     HomeComponent,
-    AddProductComponent 
+    AddProductComponent,
+    Ateleir3Component 
   ],
   imports: [
     BrowserModule,

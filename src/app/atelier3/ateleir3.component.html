@@ -1,0 +1,58 @@
+<form #f="ngForm">
+
+    <div class="form-group">
+      <label>name</label>
+      <input type="text"class="form-label" name="name" placeholder="Enter name"[(ngModel)]="carte.name" required  #name="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="name.invalid  ">
+        name is required
+      </div>
+    </div>
+    
+  <div class="form-group">
+      <label>mail</label>
+      <input type="text"class="form-label" name="mail" placeholder="Enter mail"[(ngModel)]="carte.mail" required  email  #mail="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="mail.invalid  ">
+        mail is required
+      </div>
+    </div>
+
+
+      <div class="form-group">
+      <label>type</label>
+      <input type="text"class="form-label" name ="type" placeholder="Enter type" [(ngModel)]="carte.type" required  #type="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="type.invalid ">
+        <div *ngIf="type.errors?.['required']">type is required </div>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label>number</label>
+      <input type="number" class="form-label" name="num" placeholder="Enter number" [(ngModel)]="carte.num" required  =16 #num="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="num.invalid" >
+                               <div *ngIf="num.errors?.['minlength']">Title minlength must be 3</div>
+                                 <div *ngIf="num.errors?.['required']">number is required </div>
+
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label>date</label>
+    <input type="date" class="form-label" name="date" placeholder="Enter date" [(ngModel)]="carte.date"required #date="ngModel"> 
+      <div class="alert alert-danger" role="alert" *ngIf="date.invalid">
+        date is required
+      </div>
+    </div>
+
+
+     <div class="form-group">
+      <label>code</label>
+      <input type="number" class="form-label" name="code" placeholder="Enter code" [(ngModel)]="carte.code" required #code="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="code.invalid" >
+        code is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary"[disabled]="f.invalid">add </button>
+
+
+  </form>
